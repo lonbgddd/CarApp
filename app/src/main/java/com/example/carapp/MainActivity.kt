@@ -21,3 +21,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+@Preview
+@Composable
+fun ManTaint(){
+    MainContent()
+}

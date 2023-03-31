@@ -49,13 +49,4 @@ fun MainContent() {
             }
         }
     }
-
-
-}
-
-@Composable
-fun GoToNextPage(navController: NavController? = null) {
-    Button(onClick = { navController?.navigate("home") }) {
-        Text(text = "Chuyen man")
-    }
 }
