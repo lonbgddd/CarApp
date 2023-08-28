@@ -39,6 +39,7 @@ fun HomeScreen(navController: NavController? = null, lists: List<CarElement> = e
         item {
             TopHeader()
         }
+        item { FilterBox() }
         ListCar(lists = lists, navController = navController)
     }
 
@@ -52,7 +53,7 @@ fun LazyListScope.ListCar(
     items(items = lists) {
         ListItem(
             car = it,
-            onClick = { navController?.navigate(Screens.Detail.createRoute(it.avatar.toString())) })
+            navController = navController)
     }
 
 }
@@ -60,13 +61,13 @@ fun LazyListScope.ListCar(
 @Composable
 fun ListItem(
     car: CarElement,
-    onClick: () -> Unit
+    navController: NavController? = null
 ) {
     Surface(
         color = MaterialTheme.colors.primary,
         modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
-        Card(modifier = Modifier.clickable { onClick }) {
+        Card(modifier = Modifier.clickable { navController?.navigate(Screens.Detail.createRoute(elementId = "${car.avatar}")) }) {
             Column(
                 modifier = Modifier
                     .padding(24.dp)
@@ -78,6 +79,16 @@ fun ListItem(
     }
 }
 
+@Composable
+fun FilterBox(){
+    Box (
+        modifier = Modifier.fillMaxWidth().border(color = Color.Black, width = 2.dp).background(color = Color.White),
+        contentAlignment = Alignment.Center,
+
+            ){
+        Text(text = "Chao banj")
+    }
+}
 @Composable
 fun TopHeader(navController: NavController? = null) {
     Row(

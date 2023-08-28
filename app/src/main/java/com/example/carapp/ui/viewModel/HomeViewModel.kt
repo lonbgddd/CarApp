@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.car.network.RetroInstance
 import com.example.carapp.ui.model.Car
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HomeViewModel(): ViewModel() {
@@ -15,8 +16,8 @@ class HomeViewModel(): ViewModel() {
 
     val liveDataAllPost: LiveData<Car> =  _liveDataAllPost
 
-    fun getCarAllData() = viewModelScope.launch {
-        var data = RetroInstance.getRetroInstance().getPostList()
+    fun getCarAllData() = viewModelScope.launch(Dispatchers.IO) {
+        val data = RetroInstance.getRetroInstance().getPostList()
         data.let { res ->
             _liveDataAllPost.postValue(res.body())
         }
