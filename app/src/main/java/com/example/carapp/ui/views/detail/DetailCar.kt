@@ -1,4 +1,4 @@
-package com.example.carapp.ui.views
+package com.example.carapp.ui.views.detail
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column

@@ -1,11 +1,10 @@
-package com.example.car.network
+package com.example.carapp.data.network
 
 import com.example.car.base.API_KEY
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class RetroInstance {
     companion object {

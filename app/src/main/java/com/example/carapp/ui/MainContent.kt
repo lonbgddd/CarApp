@@ -4,7 +4,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -15,11 +14,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.carapp.ui.model.Car
-import com.example.carapp.ui.model.CarElement
-import com.example.carapp.ui.viewModel.HomeViewModel
-import com.example.carapp.ui.views.DetailCar
-import com.example.carapp.ui.views.HomeScreen
+import com.example.carapp.ui.views.home.viewModel.HomeViewModel
+import com.example.carapp.ui.views.detail.DetailCar
+import com.example.carapp.ui.views.home.HomeScreen
 
 @Composable
 fun MainContent() {
